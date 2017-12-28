@@ -72,7 +72,7 @@ $('#addAnimal').on('click', function(event) {
     var animal = $(this).attr("data-animal");
     console.log('var animal2' + animal);
 
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=KQArEbz4Mo7IXNJzhI2oWZUJZx8YkTwB&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=KQArEbz4Mo7IXNJzhI2oWZUJZx8YkTwB&limit=10";
     $.ajax({
       url: queryURL,
       method: 'GET'
