@@ -1,0 +1,163 @@
+body {
+  background: url('../images/background4.png');
+  max-width: 1200px;
+}
+
+header{
+  min-height: 80px;
+  background-color: white;
+}
+h1{
+  font-size: 60px;
+  text-align: center;
+  padding-top: 15px;
+  color: black;
+  font-family: 'Shadows Into Light',cursive;
+}
+h2{
+  font-size: 35px;
+  text-align: center;
+  padding-top: 10px;
+  color: black;
+  font-family: 'Shadows Into Light',cursive;
+}
+img{
+
+  margin-top: 10px;
+  margin-bottom: 2px;
+
+
+}
+p{
+font-size: 18px;
+font-family: 'Shadows Into Light',cursive;
+text-align: center;
+color: white;
+}
+
+.mainContainer
+{
+  width: 1100px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+  min-height: 1250px;
+
+}
+
+.topContainerClass{
+  width: 1040px;
+  height: auto;
+  background-color: red;
+  min-height: 60px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.leftContainerClass{
+  width: 70%;
+  height: auto;
+  background-color: blue;
+  min-height: 570px;
+  margin-left: 5%;
+  margin-right: auto;
+  float: left;
+}
+.rightContainerClass{
+  width: 20%;
+  height: auto;
+  background-color: yellow;
+  min-height: 170px;
+  margin-left: 2%;
+  margin-right: auto;
+  float: left;
+}
+
+.animalSubcontainer{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 12px;
+  height: 250px;
+  width: 360px;
+  float: left;
+}
+
+.border{
+border: 2px;
+border-style: solid;
+border-color: black;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+/* ----------------------------------------------------- */
+
+.button {
+  font-size: 20px;
+  color: white;
+  margin-top: 15px;
+  margin-left: 20%;
+  margin-right: auto;
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  background-color: darkgreen;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px #7a7b7e;
+}
+
+.button:hover {
+  background-color: green;
+  box-shadow: 0 4.5px #b0afb4;
+}
+
+.button:active {
+  color: darkgreen;
+  background-color: lightgreen;
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
+}
+
+.inputNewAnimal{
+  margin-top: 15px;
+  margin-left: 15%;
+  width: 150px;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+/* ----------------------------------------------------- */
+.buttonAnimal {
+  font-size: 20px;
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: auto;
+  margin-bottom: 10px;
+  width: auto;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  background-color: darkblue;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px #7a7b7e;
+}
+
+.buttonAnimal:hover {
+  background-color: blue;
+  box-shadow: 0 4.5px #b0afb4;
+}
+
+.buttonAnimal:active {
+  color: darkblue;
+  background-color: lightblue;
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
+}
