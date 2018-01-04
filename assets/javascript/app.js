@@ -64,6 +64,7 @@ $('#addAnimal').on('click', function(event) {
   console.log('array animals: ' + animals);
   // debugger
   renderButtons();
+  console.log("push renderButtons");
 });
 
 // ---On click funtion to trigger the AJAX call---------------------------------
