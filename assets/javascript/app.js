@@ -95,20 +95,19 @@ $('#addAnimal').on('click', function(event) {
         animalDiv.append(p);
         animalDiv.append(animalImage);
         $("#leftContainer").prepend(animalDiv);
+        // --On click event to start and pause the gif-----------------------------------
+
+        $(".gif").on("click", function(e) {
+          var state = $(this).attr("data-state");
+            console.log('var state: ' + state);
+          if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+          } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+          }
+        });
       }
     });
   })
-
-// --On click event to start and pause the gif-----------------------------------
-
-$(".gif").on("click", function(e) {
-  var state = $(this).attr("data-state");
-    console.log('var state: ' + state);
-  if (state === "still") {
-    $(this).attr("src", $(this).attr("data-animate"));
-    $(this).attr("data-state", "animate");
-  } else {
-    $(this).attr("src", $(this).attr("data-still"));
-    $(this).attr("data-state", "still");
-  }
-});
