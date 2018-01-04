@@ -69,8 +69,8 @@ $('#addAnimal').on('click', function(event) {
 // ---On click funtion to trigger the AJAX call---------------------------------
   $(".buttonAnimal").on("click", function(e) {
     var animal = $(this).attr("data-animal");
-    console.log('var animal2' + animal);
-    
+    console.log('var animal2 :' + animal);
+
     $('#leftContainer').empty()
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=KQArEbz4Mo7IXNJzhI2oWZUJZx8YkTwB&limit=10";
@@ -103,6 +103,7 @@ $('#addAnimal').on('click', function(event) {
 
 $(".gif").on("click", function(e) {
   var state = $(this).attr("data-state");
+    console.log('var state: ' + state);
   if (state === "still") {
     $(this).attr("src", $(this).attr("data-animate"));
     $(this).attr("data-state", "animate");
