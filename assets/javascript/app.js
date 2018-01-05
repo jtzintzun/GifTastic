@@ -1,8 +1,7 @@
-var animals = ['Dog', 'Cat', 'Shark', 'Dove','Caiman','Bat', 'Coyote','Armadillo', 'Octopus', 'Squirrel', 'Piranha', 'Raccoon', 'Toucan', 'Rhinoceros', 'Seal', 'Shrimp' ]
+var animals = ['Dog', 'Cat', 'Shark', 'Dove', 'Caiman', 'Bat', 'Coyote', 'Armadillo', 'Octopus', 'Squirrel', 'Piranha', 'Raccoon', 'Toucan', 'Rhinoceros', 'Seal', 'Shrimp']
 
-buildScreen()
-renderButtons()
-// json()
+// buildScreen()
+// renderButtons()
 
 // --Buiding the main Screen--------------------------------------------------------
 
@@ -62,16 +61,17 @@ $('#addAnimal').on('click', function(event) {
   console.log('Var animal' + animal);
   animals.push(animal);
   console.log('array animals: ' + animals);
-  // debugger
   renderButtons();
-  console.log("push renderButtons");
+  console.log("push render Buttons");
 });
 
 // ---On click funtion to trigger the AJAX call---------------------------------
+$(document).on('click', 'body *', function() {
+    console.log('document Clicked');
   $(".buttonAnimal").on("click", function(e) {
     var animal = $(this).attr("data-animal");
     console.log('var animal2 :' + animal);
-
+    console.log('buttonAnimal Clicked');
     $('#leftContainer').empty()
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=KQArEbz4Mo7IXNJzhI2oWZUJZx8YkTwB&limit=10";
@@ -96,11 +96,12 @@ $('#addAnimal').on('click', function(event) {
         animalDiv.append(p);
         animalDiv.append(animalImage);
         $("#leftContainer").prepend(animalDiv);
-        // --On click event to start and pause the gif-----------------------------------
 
+        // --On click event to start and pause the gif-----------------------------------
         $(".gif").on("click", function(e) {
           var state = $(this).attr("data-state");
-            console.log('var state: ' + state);
+          console.log('var state: ' + state);
+          console.log('gift Clicked');
           if (state === "still") {
             $(this).attr("src", $(this).attr("data-animate"));
             $(this).attr("data-state", "animate");
@@ -111,4 +112,8 @@ $('#addAnimal').on('click', function(event) {
         });
       }
     });
-  })
+  });
+});
+
+buildScreen()
+renderButtons()
