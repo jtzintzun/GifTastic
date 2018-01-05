@@ -1,7 +1,7 @@
 var animals = ['Dog', 'Cat', 'Shark', 'Dove', 'Caiman', 'Bat', 'Coyote', 'Armadillo', 'Octopus', 'Squirrel', 'Piranha', 'Raccoon', 'Toucan', 'Rhinoceros', 'Seal', 'Shrimp']
 
-// buildScreen()
-// renderButtons()
+buildScreen()
+renderButtons()
 
 // --Buiding the main Screen--------------------------------------------------------
 
@@ -54,6 +54,7 @@ function renderButtons() {
 }
 
 // ---On click event to submit a new Animal-------------------------------------
+
 $('#addAnimal').on('click', function(event) {
   console.log('addAnimalButton - Clicked');
   event.preventDefault();
@@ -66,8 +67,10 @@ $('#addAnimal').on('click', function(event) {
 });
 
 // ---On click funtion to trigger the AJAX call---------------------------------
-$(document).on('click', 'body *', function() {
-    console.log('document Clicked');
+
+// $(document).on('click', 'body *', function() {
+//     console.log('document Clicked');
+
   $(".buttonAnimal").on("click", function(e) {
     var animal = $(this).attr("data-animal");
     console.log('var animal2 :' + animal);
@@ -96,24 +99,21 @@ $(document).on('click', 'body *', function() {
         animalDiv.append(p);
         animalDiv.append(animalImage);
         $("#leftContainer").prepend(animalDiv);
-
-        // --On click event to start and pause the gif-----------------------------------
-        $(".gif").on("click", function(e) {
-          var state = $(this).attr("data-state");
-          console.log('var state: ' + state);
-          console.log('gift Clicked');
-          if (state === "still") {
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-          } else {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-          }
-        });
       }
+      // --On click event to start and pause the gif-----------------------------------
+      $(".gif").on("click", function(e) {
+        var state = $(this).attr("data-state");
+        console.log('var state: ' + state);
+        console.log('gift Clicked');
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+      });
     });
   });
-});
 
-buildScreen()
-renderButtons()
+// });
