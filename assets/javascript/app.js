@@ -1,4 +1,4 @@
-var animals = ['Dog', 'Cat', 'Shark', 'Dove', 'Caiman', 'Bat', 'Coyote', 'Armadillo', 'Octopus', 'Squirrel', 'Piranha', 'Raccoon', 'Toucan', 'Rhinoceros', 'Seal', 'Shrimp']
+var animals = ['DOG', 'CAT', 'SHARK', 'DOVE', 'CAIMAN', 'BAT', 'COYOTE', 'ARMADILLO', 'OCTOPUS', 'SQUIRREL', 'PIRANHA', 'RACCOON', 'TOUCAN', 'CHIPMUNK', 'SEAL', 'DINOSAUR']
 
 buildScreen()
 renderButtons()
@@ -51,26 +51,37 @@ function renderButtons() {
     buttons.text(animals[i]);
     $('#topContainer').append(buttons);
   }
+  gifs()
+  addNewAnimal()
+  return
 }
 
 // ---On click event to submit a new Animal-------------------------------------
-
+function addNewAnimal(){
 $('#addAnimal').on('click', function(event) {
   console.log('addAnimalButton - Clicked');
   event.preventDefault();
   var animal = $('#inputAnimal').val().trim();
   console.log('Var animal' + animal);
-  animals.push(animal);
-  console.log('array animals: ' + animals);
-  renderButtons();
-  console.log("push render Buttons");
+  animal = animal.toUpperCase()
+  if (animals.includes(animal)) {
+    alert('The button '+ animal +' already exist')
+    buildScreen()
+    renderButtons()
+    return
+  } else {
+    animals.push(animal);
+    console.log('array animals: ' + animals);
+    buildScreen()
+    renderButtons();
+    console.log("push render Buttons");
+  }
 });
+}
 
 // ---On click funtion to trigger the AJAX call---------------------------------
 
-// $(document).on('click', 'body *', function() {
-//     console.log('document Clicked');
-
+function gifs(){
   $(".buttonAnimal").on("click", function(e) {
     var animal = $(this).attr("data-animal");
     console.log('var animal2 :' + animal);
@@ -115,5 +126,4 @@ $('#addAnimal').on('click', function(event) {
       });
     });
   });
-
-// });
+}
